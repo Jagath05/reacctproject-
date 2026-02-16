@@ -47,7 +47,9 @@ export default function Navbar() {
         </button>
 
       </div>
-<UserRound size={72} strokeWidth={1} absoluteStrokeWidth />    
+<UserRound size={38} strokeWidth={4} absoluteStrokeWidth className="-mx-9 mt-3.5 bg-gray-100 rounded-full text-green-600 p-2" />    
+ <span className="border-2 h-6 text-gray-300 mt-4"> </span>
+ 
 </div>
   );
 }
