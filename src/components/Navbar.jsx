@@ -3,6 +3,7 @@ import { Camera, ChevronDown,Search, UserRound } from "lucide-react";
 
 export default function Navbar() {
   return (
+    <div>
     <div className="flex items-center gap-16 px-8 py-7">
 
       {/* Logo */}
@@ -45,11 +46,45 @@ export default function Navbar() {
           Search
           <Search size={18} />
         </button>
-
       </div>
 <UserRound size={38} strokeWidth={4} absoluteStrokeWidth className="-mx-9 mt-3.5 bg-gray-100 rounded-full text-green-600 p-2" />    
- <span className="border-2 h-6 text-gray-300 mt-4"> </span>
- 
+ <span className="border-2 h-6 text-gray-300 mt-4"> </span><br />
+
 </div>
+
+
+{/* ================= MENU BAR ================= */}
+<div className="px-12 py-4 bg-gray-50">
+
+  <div className="flex items-center gap-10 bg-white border border-gray-200 rounded-xl px-8 py-4 w-fit shadow-sm">
+
+    {[
+      { name: "Home", dropdown: true, },
+      { name: "Pages", dropdown: true },
+      { name: "Shop", dropdown: true },
+      { name: "Vendor", dropdown: true },
+      { name: "Elements", dropdown: true },
+      { name: "Blog", dropdown: true },
+      { name: "Contact", dropdown: false },
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="flex items-center gap-1 cursor-pointer font-medium text-gray-700 hover:text-green-600 transition"
+      >
+        <span>{item.name}</span>
+
+        {item.dropdown && (
+           <ChevronDown size={20} className="text-green-600" />
+        )}
+      </div>
+    ))}
+
+  </div>
+
+</div>
+{/* ============================================= */}
+
+</div>
+
   );
 }
