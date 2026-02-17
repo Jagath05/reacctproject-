@@ -1,5 +1,5 @@
 import React from "react";
-import { Camera, ChevronDown,Search, UserRound } from "lucide-react";
+import { Camera, ChevronDown,Heart,Search, ShoppingBasket, UserRound } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -12,7 +12,7 @@ export default function Navbar() {
       </h1>
 
       {/* Category Pill Button */}
-      <div className="flex items-center gap-3 border border-gray-300 rounded-full px-6 py-5 mt-3 h-14 cursor-pointer hover:shadow-md transition">
+      <div className="flex items-center gap-3 border border-gray-300 rounded-full px-3 py-5 mt-3 h-14 cursor-pointer hover:shadow-md transition">
 
         {/* Green 3-line icon */}
         <div className="flex flex-col gap-1">
@@ -32,7 +32,7 @@ export default function Navbar() {
 
       </div>
        {/* Search Bar */}
-      <div className="flex items-center bg-gray-100 border border-gray-300 rounded-full overflow-hidden mt-3 w-155 h-14">
+      <div className="flex items-center bg-gray-100 border border-gray-300 rounded-full overflow-hidden mt-3 w-145 h-14">
 
         {/* Input */}
         <input
@@ -47,8 +47,13 @@ export default function Navbar() {
           <Search size={18} />
         </button>
       </div>
-<UserRound size={38} strokeWidth={4} absoluteStrokeWidth className="-mx-9 mt-3.5 bg-gray-100 rounded-full text-green-600 p-2" />    
- <span className="border-2 h-6 text-gray-300 mt-4"> </span><br />
+      <div className="flex items-center gap-18 ">
+        <UserRound size={38} strokeWidth={4} absoluteStrokeWidth className="-mx-9 mt-3.5 bg-gray-100 rounded-full text-green-600 p-2" />    
+ <span className="border-2 h-6 text-gray-300 mt-4"> </span>
+<div className="flex items-center gap-16"> <Heart size={38} strokeWidth={2} className="bg-gray-100 text-red-500 rounded-full mt-3.5 -ml-10 " /> <span className="text-2xl -ml-14 mt-4 text-sky-400 hover:bg-red-400 hover:text-purple-50 rounded-full w-23 h-11 p-1 text-center">Liked</span></div>
+ <ShoppingBasket size={40} strokeWidth={1.25} className="bg-gray-100 text-green-400 rounded-full mt-3.5 -ml-14"/><span className="text-[16pt] -ml-14 mt-4 text-sky-400  hover:bg-violet-500 hover:text-blue-50 rounded-full w-23 h-11 text-center p-1 "> My Cart</span>
+      </div>
+
 
 </div>
 
