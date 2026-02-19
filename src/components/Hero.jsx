@@ -1,5 +1,11 @@
 import React from 'react'
 import Myimg from '../assets/img/image2.jpg'
+import Myimg1 from '../assets/img/images (21).jpg'
+import Myimg2 from '../assets/img/images (8).jpg'
+import Myimg3 from '../assets/img/images (12).jpg'
+import Myimg4 from '../assets/img/images (14).jpg'
+import Myimg5 from '../assets/img/image5.jpg'
+import Myimg6 from '../assets/img/images (15).jpg'
 
 export default function Hero() {
   return (
@@ -65,7 +71,7 @@ export default function Hero() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\images (21).jpg"
+                          src={Myimg1}
                           className="size-full object-cover"
                         />
                       </div>
@@ -74,21 +80,21 @@ export default function Hero() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\images (8).jpg"
+                          src={Myimg2}
                           className="size-full object-cover"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\images (12).jpg"
+                          src={Myimg3}
                           className="size-full object-cover"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\images (14).jpg"
+                          src={Myimg4}
                           className="size-full object-cover"
                         />
                       </div>
@@ -97,14 +103,14 @@ export default function Hero() {
                       <div className="h-64 w-55 overflow-hidden rounded-lg pr-9" >
                         <img
                           alt=""
-                          src="public\img\images (5).jpg"
+                          src={Myimg5}
                           className="size-full object-cover"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           alt=""
-                          src="public\img\images (15).jpg"
+                          src={Myimg6}
                           className="size-full object-cover"
                         />
                       </div>
