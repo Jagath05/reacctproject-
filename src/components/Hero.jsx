@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Myimg from '../assets/img/image2.jpg'
 
 export default function Hero() {
   return (
@@ -58,7 +58,7 @@ export default function Hero() {
                       <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                         <img
                           alt=""
-                          src="public\img\images (22).jpg"
+                          src={Myimg}
                           className="size-full object-cover"
                         />
                       </div>
