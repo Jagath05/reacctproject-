@@ -13,6 +13,10 @@ function App() {
         <Hero/>
 
         <Categories/>
+
+        <ProductsSection />
+
+        <Footer />
       </div>
     </>
   )
