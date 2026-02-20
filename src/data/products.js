@@ -9,7 +9,7 @@ const products = [
     rating: "4.8 (234)",
     sale: true,
     image:
-      "public/img/milk.jpg",
+      "src/assets/img/milk.jpg",
   },
   {
     id: 2,
