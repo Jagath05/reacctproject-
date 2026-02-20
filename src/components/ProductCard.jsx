@@ -40,11 +40,11 @@ export default function ProductCard({ product }) {
         <div className="flex justify-between items-center mt-2">
           <div>
             <span className="text-green-600 font-bold">
-              ${product.price}
+              Rs.{product.price}
             </span>
             {product.oldPrice && (
               <span className="text-gray-400 line-through text-sm ml-1">
-                ${product.oldPrice}
+                Rs.{product.oldPrice}
               </span>
             )}
           </div>

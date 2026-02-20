@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8">
 
         <div>
-          <h3 className="text-xl font-bold">FreshlyMart</h3>
+          <h3 className="text-xl font-bold">Freshly</h3>
           <p className="text-sm mt-2 text-green-200">
             Your trusted online grocery store delivering fresh produce daily.
           </p>
@@ -27,13 +27,13 @@ export default function Footer() {
 
         <div>
           <h4 className="font-semibold mb-2">Contact</h4>
-          <p className="text-sm text-green-200">info@freshlymart.com</p>
-          <p className="text-sm text-green-200">+91 99999 99999</p>
+          <p className="text-sm text-green-200">info@freshly.com</p>
+          <p className="text-sm text-green-200">+91 90474552921 </p>
         </div>
       </div>
 
       <div className="text-center py-4 border-t border-green-700 text-sm text-green-200">
-        © 2025 FreshlyMart. All rights reserved.
+        © 2025 Freshly. All rights reserved.
       </div>
     </footer>
   );
