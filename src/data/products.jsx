@@ -1,3 +1,8 @@
+import milk from "../assets/img/milk.jpg";
+import milk1 from "../assets/img/milk1.jpg";
+import orange from "../assets/img/orange.jpg";
+import st from "../assets/img/st.jpg";
+
 const products = [
   {
     id: 1,
@@ -8,8 +13,7 @@ const products = [
     oldPrice: 5.99,
     rating: "4.8 (234)",
     sale: true,
-    image:
-      "src/assets/img/milk.jpg",
+    image: milk,
   },
   {
     id: 2,
@@ -19,8 +23,7 @@ const products = [
     price: 5.29,
     rating: "4.7 (189)",
     new: true,
-    image:
-      "src/assets/img/milk1.jpg",
+    image: milk1,
   },
   {
     id: 3,
@@ -31,8 +34,7 @@ const products = [
     oldPrice: 8.49,
     rating: "4.9 (312)",
     sale: true,
-    image:
-      "src/assets/img/orange.jpg",
+    image: orange,
   },
   {
     id: 4,
@@ -42,8 +44,7 @@ const products = [
     price: 5.99,
     rating: "4.8 (201)",
     new: true,
-    image:
-      "src/assets/img/st.jpg",
+    image: st,
   },
 ];
 
