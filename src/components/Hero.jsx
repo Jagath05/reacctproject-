@@ -11,15 +11,15 @@ export default function Hero() {
   return (
     <div className="relative overflow-hidden bg-white pt-1">
 
-      <div className="pt-16 pb-20 sm:pt-20 sm:pb-28 lg:pt-32 lg:pb-40">
+      <div className="pt-16 pb-20 sm:pt-20 sm:pb-28 lg:pt-1 lg:pb-10">
 
         {/* MAIN CONTAINER */}
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
 
           {/* ================= LEFT CONTENT ================= */}
-          <div className="max-w-lg">
+          <div className="max-w-lg ">
 
-            <div className="inline-block bg-red-100 text-red-600 font-semibold px-4 py-1.5 rounded-full text-sm mb-6 animate-pulse">
+            <div className="inline-block bg-red-100 text-red-600 font-semibold px-4 py-1.5 rounded-full text-sm mb-6 mt-15 animate-pulse">
               🎉 Flat 30% OFF on Fresh Juices & Desserts!
             </div>
 
