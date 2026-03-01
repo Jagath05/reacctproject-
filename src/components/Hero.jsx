@@ -6,7 +6,6 @@ import Myimg3 from '../assets/img/images (12).jpg'
 import Myimg4 from '../assets/img/images (14).jpg'
 import Myimg5 from '../assets/img/image5.jpg'
 import Myimg6 from '../assets/img/images (15).jpg'
-
 export default function Hero() {
   return (
     <div className="relative overflow-hidden bg-white pt-1">
