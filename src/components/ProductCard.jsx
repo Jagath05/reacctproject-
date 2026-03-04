@@ -1,6 +1,11 @@
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "../context/CartContext";
+import toast from "react-hot-toast";
 
 export default function ProductCard({ product }) {
+
+  const { addToCart } = useCart();
+
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition">
 
@@ -27,21 +32,31 @@ export default function ProductCard({ product }) {
 
       {/* Content */}
       <div className="p-3">
-        <p className="text-xs text-gray-400 uppercase">{product.category}</p>
 
-        <h3 className="font-semibold text-sm">{product.name}</h3>
+        <p className="text-xs text-gray-400 uppercase">
+          {product.category}
+        </p>
 
-        <p className="text-xs text-gray-400">{product.size}</p>
+        <h3 className="font-semibold text-sm">
+          {product.name}
+        </h3>
+
+        <p className="text-xs text-gray-400">
+          {product.size}
+        </p>
 
         <p className="text-yellow-500 text-xs mt-1">
           ⭐ {product.rating}
         </p>
 
         <div className="flex justify-between items-center mt-2">
+
+          {/* Price */}
           <div>
             <span className="text-green-600 font-bold">
               Rs.{product.price}
             </span>
+
             {product.oldPrice && (
               <span className="text-gray-400 line-through text-sm ml-1">
                 Rs.{product.oldPrice}
@@ -49,10 +64,18 @@ export default function ProductCard({ product }) {
             )}
           </div>
 
-          <button className="bg-green-600 p-2 rounded-full text-white hover:bg-green-700 transition">
-            <ShoppingCart size={14} />
+          {/* Cart Button */}
+         <button onClick={() => {
+          addToCart(product);
+          toast.success(`${product.name} added to cart`);
+           }}
+          className="bg-green-600 p-2 rounded-full text-white"
+>
+           <ShoppingCart size={14}/>
           </button>
+
         </div>
+
       </div>
     </div>
   );

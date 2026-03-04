@@ -7,10 +7,15 @@ import {
   UserRound,
 } from "lucide-react";
 
-export default function Navbar() {
-  return (
-    <div className="fixed top-0 left-0 w-full bg-white shadow-sm  z-50">
+import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
+export default function Navbar() {
+
+  const { cartItems } = useCart();
+
+  return (
+    <div className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
 
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 py-4">
 
@@ -51,14 +56,14 @@ export default function Navbar() {
         {/* Right Icons */}
         <div className="flex items-center gap-6">
 
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="p-2 bg-gray-100 rounded-full group-hover:bg-green-100 transition">
-              <UserRound size={20} className="text-green-600" />
-            </div>
+          {/* User */}
+          <div className="p-2 bg-gray-100 rounded-full hover:bg-green-100 transition cursor-pointer">
+            <UserRound size={20} className="text-green-600" />
           </div>
 
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="p-2 bg-gray-100 rounded-full group-hover:bg-red-100 transition">
+          {/* Wishlist */}
+          <div className="flex items-center gap-2 cursor-pointer">
+            <div className="p-2 bg-gray-100 rounded-full hover:bg-red-100 transition">
               <Heart size={20} className="text-red-500" />
             </div>
             <span className="hidden sm:block text-sm font-medium">
@@ -66,22 +71,27 @@ export default function Navbar() {
             </span>
           </div>
 
-          <div className="flex items-center gap-2 cursor-pointer group relative">
-            <div className="p-2 bg-gray-100 rounded-full group-hover:bg-green-100 transition">
-              <ShoppingBasket size={20} className="text-green-600" />
-            </div>
-            <span className="hidden sm:block text-sm font-medium">
-              Cart
-            </span>
+          {/* Cart */}
+          <Link to="/cart">
+            <div className="flex items-center gap-2 cursor-pointer relative">
 
-            {/* Cart Badge */}
-            <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-              2
-            </span>
-          </div>
+              <div className="p-2 bg-gray-100 rounded-full hover:bg-green-100 transition">
+                <ShoppingBasket size={20} className="text-green-600" />
+              </div>
+
+              <span className="hidden sm:block text-sm font-medium">
+                Cart
+              </span>
+
+              {/* Cart Counter */}
+              <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                {cartItems.length}
+              </span>
+
+            </div>
+          </Link>
 
         </div>
-
       </div>
 
       {/* Mobile Search */}

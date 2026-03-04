@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const categories = [
   { name: "Milk", items: 12, emoji: "🥛", bg: "from-blue-100 to-blue-200" },
@@ -24,75 +25,41 @@ export default function Categories() {
             Category
           </span>
         </h2>
+
         <p className="mt-4 text-gray-600 text-lg">
           Browse our wide range of fresh and delicious products
         </p>
       </div>
 
-      {/* Animated Grid Container */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.08, // smooth stagger
-            },
-          },
-        }}
-        className="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8"
-      >
+      {/* Categories Grid */}
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+
         {categories.map((cat, index) => (
-          <motion.div
-            key={index}
-            variants={{
-              hidden: { opacity: 0, y: 40, scale: 0.9 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 180,
-                  damping: 15,
-                },
-              },
-            }}
-            whileHover={{
-              scale: 1.05,
-              rotateX: 6,
-              rotateY: -6,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 300, // faster hover reaction
-              damping: 10,
-            }}
-            className={`relative rounded-3xl p-8 bg-gradient-to-br ${cat.bg} shadow-md cursor-pointer perspective-1000`}
-          >
-            {/* Floating Emoji */}
+          <Link key={index} to={`/category/${cat.name.toLowerCase()}`}>
+
             <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-5xl mb-6"
+              whileHover={{ scale: 1.05 }}
+              className={`rounded-3xl p-8 bg-gradient-to-br ${cat.bg} shadow-md cursor-pointer`}
             >
-              {cat.emoji}
+
+              <div className="text-5xl mb-6">
+                {cat.emoji}
+              </div>
+
+              <h3 className="text-xl font-semibold mb-2">
+                {cat.name}
+              </h3>
+
+              <p className="text-gray-600">
+                {cat.items} items
+              </p>
+
             </motion.div>
 
-            <h3 className="text-xl font-semibold mb-2">{cat.name}</h3>
-            <p className="text-gray-600">{cat.items} items</p>
-
-            {/* Soft Glow on Hover */}
-            <div className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-20 bg-white transition duration-200"></div>
-          </motion.div>
+          </Link>
         ))}
-      </motion.div>
+
+      </div>
     </section>
   );
 }
