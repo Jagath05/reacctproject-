@@ -3,7 +3,8 @@ import milk1 from "../assets/img/milk1.jpg";
 import orange from "../assets/img/orange.jpg";
 import st from "../assets/img/st.jpg";
 
-const products = [
+/* BASE PRODUCTS (your real ones) */
+const baseProducts = [
   {
     id: 1,
     category: "Milk",
@@ -47,5 +48,41 @@ const products = [
     image: st,
   },
 ];
+
+/* ALL CATEGORIES */
+const categories = [
+  "Milk",
+  "Juice",
+  "Milkshakes",
+  "Fruits",
+  "Vegetables",
+  "Ice Cream",
+  "Fresh Juice",
+  "Desserts",
+];
+
+/* SAMPLE IMAGES */
+const images = [milk, milk1, orange, st];
+
+/* AUTO GENERATE MORE PRODUCTS */
+let id = baseProducts.length + 1;
+
+const generatedProducts = categories.flatMap((category) =>
+  Array.from({ length: 15 }).map((_, index) => ({
+    id: id++,
+    category: category,
+    name: `${category} Product ${index + 1}`,
+    size: "500 ml",
+    price: Math.floor(Math.random() * 80) + 20,
+    oldPrice: Math.floor(Math.random() * 100) + 50,
+    rating: "4.5 (120)",
+    image: images[index % images.length],
+    sale: index % 3 === 0,
+    new: index % 4 === 0,
+  }))
+);
+
+/* FINAL PRODUCTS */
+const products = [...baseProducts, ...generatedProducts];
 
 export default products;

@@ -1,4 +1,6 @@
 import { useCart } from "../context/CartContext";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CartPage() {
 
@@ -9,6 +11,19 @@ export default function CartPage() {
     decreaseQty,
     totalPrice,
   } = useCart();
+
+  const navigate = useNavigate();
+
+useEffect(() => {
+
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (!isLoggedIn) {
+    alert("Please login first");
+    navigate("/login");
+  }
+
+}, []);
 
   return (
     <div className="max-w-6xl mx-auto py-20 px-4">
